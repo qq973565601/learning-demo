@@ -9,5 +9,10 @@
     <description>learning</description>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>lzx-algorithm</module>
+        <module>lzx-common</module>
+        <module>lzx-module</module>
+    </modules>
 
 </project>
