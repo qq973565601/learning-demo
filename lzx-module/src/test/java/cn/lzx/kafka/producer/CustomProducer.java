@@ -24,6 +24,8 @@ public class CustomProducer {
         // 指定序列化类型
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        // 关联自定义分区器
+        properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "cn.lzx.kafka.producer.MyPartitioner");
         /**
          * 2 创建Kafka生产者对象
          */
