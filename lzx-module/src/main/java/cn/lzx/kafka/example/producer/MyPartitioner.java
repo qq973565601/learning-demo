@@ -1,4 +1,4 @@
-package cn.lzx.kafka.producer;
+package cn.lzx.kafka.example.producer;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
