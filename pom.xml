@@ -13,6 +13,7 @@
         <module>lzx-algorithm</module>
         <module>lzx-common</module>
         <module>lzx-module</module>
+        <module>lzx-ssm</module>
     </modules>
 
 </project>
