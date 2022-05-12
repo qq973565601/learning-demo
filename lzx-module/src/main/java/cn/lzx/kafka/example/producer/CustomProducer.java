@@ -4,6 +4,8 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
@@ -14,6 +16,11 @@ import java.util.Properties;
  * @since 2022.5.6
  */
 public class CustomProducer {
+    /**
+     * log
+     */
+    private static final Logger logger = LoggerFactory.getLogger(CustomProducer.class);
+
     public static void main(String[] args) {
         /**
          * 1 配置

@@ -3,7 +3,6 @@ package cn.lzx.kafka.example.consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,16 +14,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 消费者
+ * 指定消费者分区消费
  *
  * @author lzx
  * @since 2022-05-12
  */
-public class CustomConsumer {
+public class CustomConsumerPartition {
     /**
      * log
      */
-    private static final Logger logger = LoggerFactory.getLogger(CustomConsumer.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomConsumerPartition.class);
 
     public static void main(String[] args) {
         /**
@@ -42,11 +41,11 @@ public class CustomConsumer {
          */
         KafkaConsumer kafkaConsumer = new KafkaConsumer<String, String>(props);
         /**
-         * 3 订阅主题对应的分区
+         * 3 订阅主题
          */
-        List<TopicPartition> topics = new ArrayList<>();
-        topics.add(new TopicPartition("topic", 0));
-        kafkaConsumer.assign(topics);
+        List topics = new ArrayList<String>();
+        topics.add("topic");
+        kafkaConsumer.subscribe(topics);
         /**
          * 4 消费数据，拉取
          */
@@ -54,6 +53,5 @@ public class CustomConsumer {
             ConsumerRecords consumerRecords = kafkaConsumer.poll(Duration.ofSeconds(1));
             logger.info("consumer:{}", consumerRecords);
         }
-
     }
 }

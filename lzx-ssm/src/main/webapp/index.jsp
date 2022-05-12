@@ -21,7 +21,6 @@
                 <h4 class="modal-title" id="myModalLabel">新增员工</h4>
             </div>
             <div class="modal-body">
-
                 <%------------------------------ 表单 ------------------------------%>
                 <form class="form-horizontal">
                     <%-- empName --%>
@@ -74,7 +73,6 @@
     </div>
 </div>
 <%----------------------------------------------------------------------------%>
-
 <%------------------------------ 员工修改的模态框 -----------------------------%>
 <div class="modal fade" id="empUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -128,7 +126,6 @@
                     </div>
                 </form>
                 <%------------------------------------------------------------------%>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -138,7 +135,6 @@
     </div>
 </div>
 <%----------------------------------------------------------------------%>
-
 <%-- 搭建显示页面 --%>
 <div class="container">
     <%-- 标题 --%>
@@ -188,7 +184,6 @@
             </table>
         </div>
     </div>
-
     <%-- 显示分页信息 --%>
     <div class="row">
         <%-- 分页文字信息 --%>
@@ -198,17 +193,13 @@
         <div class="col-md-6" id="page_nav_area"></div>
     </div>
 </div>
-
 <%--  =========================================================================================  --%>
 <%--  ==========================================js部分=========================================  --%>
 <%--  =========================================================================================  --%>
-
 <script type="text/javascript">
-
     /**
      * 一、进入首页，显示所获得的数据
      */
-
         <%--1、页面加载完成以后，直接发送一个ajax请求，获取分页数据--%>
         <%--总记录数，用于跳转到最后一页。由于有了分页插件，当跳转页面大于总页面数的时候，就会跳转到最后一页--%>
     var totalRecordCount;
@@ -219,12 +210,10 @@
         //去首页
         to_page(1);
     });
-
     //实现页面跳转，想跳到第几页就传参数
     function to_page(page) {
         //每次页面跳转时，都将全选/全不选设置为false
         $("#check_all").prop("checked", false);
-
         $.ajax({
             url: "${APP_PATH}/emps",
             data: "pn=" + page,
@@ -240,15 +229,12 @@
             }
         });
     }
-
     // 1、解析并显示员工数据
     function build_emps_table(res) {
         //清空table表格，如果不清空，当页面刷新的时候新的数据不会覆盖旧数据，造成页面混乱
         $("#emps_table tbody").empty();
-
         //获取所有员工数据
         var emps = res.extend.pageInfo.list;
-
         //遍历员工数据
         $.each(emps, function (index, item) {
             //在员工数据的最左边加上多选框
@@ -258,22 +244,18 @@
             var genderTd = $("<td></td>").append(item.gender == 'M' ? "男" : "女");
             var emailTd = $("<td></td>").append(item.email);
             var deptNameTd = $("<td></td>").append(item.department.deptName);
-
             //编辑按钮
             var editBtn = $("<button></button>").addClass("btn btn-info btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil").append("编辑"));
             //编辑员工信息时，为编辑按钮添加一个自定义的属性，来表示当前员工id
             editBtn.attr("edit-id", item.empId);
-
             //删除按钮
             var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash").append("删除"));
             //为删除按钮添加一个自定义的属性，来表示当前员工id
             delBtn.attr("del-id", item.empId);
-
             //把两个按钮放到一个单元格中，并且按钮之间留点空隙
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
-
             //append方法执行完成以后还是会返回原来的元素，所以可以一直.append添加元素，
             //将上面的td添加到同一个tr里
             $("<tr></tr>").append(checkBoxTd)
@@ -287,14 +269,12 @@
         });
 
     }
-
     // 2、解析并显示分页条
     function build_page_nav(res) {
         //清空分页条，如果不清空，当页面刷新的时候新的数据不会覆盖旧数据，造成页面混乱
         $("#page_nav_area").empty();
 
         var ul = $("<ul></ul>").addClass("pagination");
-
         //构建首页和上一页的标签
         var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href", "#"));
         var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
@@ -313,7 +293,6 @@
                 to_page(res.extend.pageInfo.pageNum - 1);
             });
         }
-
         //下一页和尾页
         var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
         var lastPageLi = $("<li></li>").append($("<a></a>").append("尾页").attr("href", "#"));
@@ -332,7 +311,6 @@
                 to_page(res.extend.pageInfo.pages);
             });
         }
-
         //添加首页和前一页到ul标签中
         ul.append(firstPageLi).append(prePageLi);
         //遍历，给ul中添加页码
@@ -354,7 +332,6 @@
         //把ul添加到nav标签中
         var navEle = $("<nav></nav>").append(ul).appendTo("#page_nav_area");
     }
-
     // 3、解析并显示分页文字信息
     function build_page_info(res) {
         //清空分页文字信息，如果不清空，当页面刷新的时候新的数据不会覆盖旧数据，造成页面混乱
@@ -371,12 +348,10 @@
     }
 
     //==========================================================================================
-
     /**
      * 二、新增数据
      * 模态框事件
      */
-
     //每次开启模态框，清空表单样式及内容
     function reset_form(ele) {
         //清空表单内容，取出dom对象，调用reset()方法
@@ -386,8 +361,6 @@
         //清空提示信息
         $(ele).find(".help-block").text("");
     }
-
-
     //1、点击新增按钮，弹出模态框
     $("#emp_add_modal_btn").click(function () {
         //清除表单数据（表单重置，包括表单数据以及表单样式），防止出现点击保存之后再次点击新增，跳出的模态框还是保存上次添加的记录，避免重复添加。
@@ -430,7 +403,6 @@
     }
 
     //==========================================================================================
-
     //这里将校验结果的提示信息全部抽取出来
     function show_validate_msg(ele, status, msg) {
         // 当一开始输入不正确的用户名之后，会变红。
@@ -451,8 +423,6 @@
             $(ele).next("span").text(msg);
         }
     }
-
-
     //校验方法，判断用户名是否重复或者不可用
     function validate_add_form() {
         // 拿到要校验的数据，使用正则表达式
@@ -466,12 +436,10 @@
         } else {
             show_validate_msg("#empName_add_input", "success", "");
         }
-
         //2、校验邮箱
         var email = $("#email_add_input").val();
         var regEmail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
         if (!regEmail.test(email)) {
-
             /**
              * alert("邮箱格式不正确!");
              * $("#email_add_input").parent().addClass("has-error");
@@ -484,10 +452,8 @@
             // $("#email_add_input").next("span").text("");
             show_validate_msg("#email_add_input", "success", "");
         }
-
         return true;
     }
-
     // 设置email的校验状态
     var emailStatus;
     // 校验邮箱是否可用
@@ -524,10 +490,8 @@
             }
         })
     })
-
     //3、保存按钮
     $("#emp_save_btn").click(function () {
-
         /**
          * 1、模态框中填写的表单数据提交给服务器进行保存
          * 2、先对要提交给服务器的数据进行校验，并且判断之前的ajax用户名校验是否成功
@@ -568,10 +532,7 @@
             }
         });
     });
-
-
     //=============================================================================================
-
     /**
      * 三、编辑数据，绑定事件
      *
@@ -595,7 +556,6 @@
             backdrop: "static"
         });
     })
-
     //1、员工姓名回显
     function getEmp(id) {
         $.ajax({
@@ -617,7 +577,6 @@
             }
         });
     }
-
     //修改员工时，校验邮箱是否可用
     $("#email_update_input").change(function () {
         validate_update_email();
@@ -634,7 +593,6 @@
         }
         return true;
     }
-
     //2、点击更新，更新员工信息
     $("#emp_update_btn").click(function () {
         //验证邮箱是否合法
@@ -646,7 +604,6 @@
         } else {
             show_validate_msg("#email_update_input", "success", "");
         }
-
         //发送ajax请求保存更新的员工数据
         $.ajax({
             //加上之前在修改按钮上保存的edit-id的值
@@ -661,7 +618,6 @@
             }
         })
     })
-
     //=============================================================================================
     /**
      * 四、删除
@@ -691,7 +647,6 @@
     });
     //完成全选/全不选功能
     $("#check_all").click(function () {
-
         /**
          * attr获取checked是undefined，因为我们没有定义checked属性，attr获取的是自定义属性值
          * 而我们这些dom原生的属性，可以用prop来获取这些值
@@ -708,18 +663,14 @@
 
         $("#check_all").prop("checked", flag);
     })
-
     //为批量删除绑定单击事件
     $("#emp_delete_batch_btn").click(function () {
-
         var empNames = "";
         var del_idstr = "";
-
         //遍历每一个被选中的复选框
         $.each($(".check_item:checked"), function () {
             // 组装获取要删除的员工姓名
             empNames += $(this).parents("tr").find("td:eq(2)").text() + "\n";
-
             // 组装获取要删除的员工的id
             del_idstr += $(this).parents("tr").find("td:eq(1)").text() + "-";
         });
@@ -736,9 +687,7 @@
             })
         }
     });
-
     //=====================================查询===============================================
-
     //为搜索按钮绑定单击事件
     $("#search_btn").click(function () {
         //清空tbody，如果不清空，当页面刷新的时候新的数据不会覆盖旧数据，造成页面混乱
@@ -765,7 +714,6 @@
             });
         }
     })
-
     /**
      * 1、查询员工数据并显示在页面上
      * @param res
@@ -815,7 +763,6 @@
             })
         }
     }
-
     // 解析并显示搜索页面的分页信息
     function build_search_page_info(res) {
         //清空分页文字信息，如果不清空，当页面刷新的时候新的数据不会覆盖旧数据，造成页面混乱
