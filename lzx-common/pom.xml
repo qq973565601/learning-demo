@@ -11,22 +11,57 @@
     <artifactId>lzx-common</artifactId>
     <description>公共部分</description>
 
+    <properties>
+        <version.logback>1.0.11</version.logback>
+        <version.slf4j>1.7.5</version.slf4j>
+        <version.fastjson>1.2.35</version.fastjson>
+        <version.httpclient>4.3.6</version.httpclient>
+        <version.httpcore>4.2.1</version.httpcore>
+    </properties>
+
     <dependencies>
         <!--logback日志框架-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
+            <version>${version.slf4j}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.0.11</version>
+            <version>${version.logback}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.0.11</version>
+            <version>${version.logback}</version>
         </dependency>
+        <!--json数据处理，返回统一结果-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${version.fastjson}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${version.httpclient}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${version.httpcore}</version>
+        </dependency>
+<!--        &lt;!&ndash;使用java代码发送http请求的工具类&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.httpcomponents</groupId>-->
+<!--            <artifactId>httpcore</artifactId>-->
+<!--            <version>4.4.12</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>commons-lang</groupId>-->
+<!--            <artifactId>commons-lang</artifactId>-->
+<!--            <version>2.6</version>-->
+<!--        </dependency>-->
     </dependencies>
 </project>

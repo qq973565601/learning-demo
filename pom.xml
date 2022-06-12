@@ -14,10 +14,14 @@
         <module>lzx-common</module>
         <module>lzx-module</module>
         <module>lzx-ssm</module>
+        <module>springboot</module>
     </modules>
 
+    <!--约束编码和版本-->
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 </project>
