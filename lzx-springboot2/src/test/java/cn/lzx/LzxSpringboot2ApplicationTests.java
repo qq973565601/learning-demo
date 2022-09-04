@@ -1,10 +1,10 @@
-package cn.lzx.springboot;
+package cn.lzx;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootApplicationTests {
+class LzxSpringboot2ApplicationTests {
 
     @Test
     void contextLoads() {

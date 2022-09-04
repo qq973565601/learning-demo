@@ -14,7 +14,6 @@
         <module>lzx-common</module>
         <module>lzx-module</module>
         <module>lzx-ssm</module>
-        <module>springboot</module>
     </modules>
 
     <!--约束编码和版本-->
