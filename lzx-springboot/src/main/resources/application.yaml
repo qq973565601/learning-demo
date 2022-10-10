@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springboot
+#  resources:
+#    static-locations:
+#      - classpath:/webapp/static/
