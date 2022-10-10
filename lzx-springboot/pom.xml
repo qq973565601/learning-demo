@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>lzx-springboot2</artifactId>
+    <artifactId>lzx-springboot</artifactId>
     <version>1.0.0</version>
-    <name>lzx-springboot2</name>
-    <description>springboot2</description>
+    <name>lzx-springboot</name>
+    <description>springboot2 learning</description>
 
     <parent>
         <groupId>cn.lzx</groupId>
