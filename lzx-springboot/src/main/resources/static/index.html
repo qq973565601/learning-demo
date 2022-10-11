@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>welcome</h1>
+
 测试rest风格
-表单
 <form action="/user" method="get">
     <input value="REST-GET 提交" type="submit">
 </form>
@@ -25,7 +25,19 @@
     <input name="_method" type="hidden" value="put">
     <input value="REST-PUT 提交" type="submit">
 </form>
-
 测试基本注解
+<ul>
+    <!--<a href="/car/3/owner/lisi">测试路径参数</a>-->
+    <a href="/car/3/owner/lisi?age=18&inters=basketball&inters=game">测试路径变量</a>
+    <a href="/cookie">测试cookie</a>
+</ul>
+<br/>
+<form action="/body" method="post">
+    ====测试RequestBody获取数据====<br/>
+    用户名：<input name="userName"><br>
+    邮箱：<input name="email"><br/>
+    <input type="submit" value="提交">
+</form>
+
 </body>
 </html>
