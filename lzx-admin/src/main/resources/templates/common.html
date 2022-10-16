@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:formtarget="commonheader">
+<head th:fragment="commonheader">
     <!--common-->
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <link th:href="@{/css/style-responsive.css}" rel="stylesheet">
@@ -10,20 +10,16 @@
 <body>
 
 <!-- left side start-->
-<div id="leftmenu" class="left-side sticky-left-side">
-
+<div th:fragment="leftmenu" class="left-side sticky-left-side">
     <!--logo and iconic logo start-->
     <div class="logo">
         <a href="index.html"><img src="images/logo.png" alt=""></a>
     </div>
-
     <div class="logo-icon text-center">
         <a href="index.html"><img src="images/logo_icon.png" alt=""></a>
     </div>
     <!--logo and iconic logo end-->
-
     <div class="left-side-inner">
-
         <!-- visible to small devices only -->
         <div class="visible-xs hidden-sm hidden-md hidden-lg">
             <div class="media logged-user">
@@ -33,7 +29,6 @@
                     <span>"Hello There..."</span>
                 </div>
             </div>
-
             <h5 class="left-nav-title">Account Information</h5>
             <ul class="nav nav-pills nav-stacked custom-nav">
                 <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
@@ -41,10 +36,9 @@
                 <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
             </ul>
         </div>
-
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Layouts</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="blank_page.html"> Blank Page</a></li>
@@ -54,6 +48,7 @@
 
                 </ul>
             </li>
+
             <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>UI Elements</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="general.html"> General</a></li>
@@ -95,7 +90,6 @@
                     <li><a href="inline_editors.html"> Inline Editors</a></li>
                     <li><a href="pickers.html"> Pickers</a></li>
                     <li><a href="dropzone.html"> Dropzone</a></li>
-                    <li><a href="http:///moban.html"> More</a></li>
                 </ul>
             </li>
             <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span>Charts</span></a>
@@ -106,9 +100,9 @@
                     <li><a href="c3chart.html"> C3 Charts</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span>Data Tables</span></a>
+            <li class="menu-list nav-active"><a href="#"><i class="fa fa-th-list"></i> <span>Data Tables</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="basic_table.html"> Basic Table</a></li>
+                    <li class="active"><a href="basic_table.html"> Basic Table</a></li>
                     <li><a href="dynamic_table.html"> Advanced Table</a></li>
                     <li><a href="responsive_table.html"> Responsive Table</a></li>
                     <li><a href="editable_table.html"> Edit Table</a></li>
@@ -147,7 +141,7 @@
 <!-- left side end-->
 
 <!-- header section start-->
-<div id="headermenu" class="header-section">
+<div th:fragment="headermenu" class="header-section">
 
     <!--toggle button start-->
     <a class="toggle-btn"><i class="fa fa-bars"></i></a>
@@ -340,7 +334,7 @@
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <img src="images/photos/user-avatar.png" alt=""/>
-                    [[${session.loginUser.userName}]]
+                    John Doe
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
@@ -357,7 +351,7 @@
 </div>
 <!-- header section end-->
 
-<div th:formtarget="commonscrit">
+<div th:fragment="commonscrit">
     <!-- Placed js at the end of the document so the pages load faster -->
     <script th:src="@{/js/jquery-1.10.2.min.js}"></script>
     <script th:src="@{/js/jquery-ui-1.9.2.custom.min.js}"></script>
@@ -365,6 +359,8 @@
     <script th:src="@{/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/modernizr.min.js}"></script>
     <script th:src="@{/js/jquery.nicescroll.js}"></script>
+    <!--common scripts for all pages-->
+    <script th:src="@{/js/scripts.js}"></script>
 </div>
 </body>
 </html>

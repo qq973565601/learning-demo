@@ -129,8 +129,8 @@
                 </li>
                 <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span>Data Tables</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="basic_table.html"> Basic Table</a></li>
-                        <li><a href="dynamic_table.html"> Advanced Table</a></li>
+                        <li class="active"><a href="basic_table.html"> Basic Table</a></li>
+                        <li class="active"><a href="dynamic_table.html"> Advanced Table</a></li>
                         <li><a href="responsive_table.html"> Responsive Table</a></li>
                         <li><a href="editable_table.html"> Edit Table</a></li>
                     </ul>
@@ -904,12 +904,7 @@
 </section>
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="js/jquery-1.10.2.min.js"></script>
-<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="js/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/modernizr.min.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
+<div th:replace="common :: commonscrit"></div>
 
 <!--easy pie chart-->
 <script src="js/easypiechart/jquery.easypiechart.js"></script>
