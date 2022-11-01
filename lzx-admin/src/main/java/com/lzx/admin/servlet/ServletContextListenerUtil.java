@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
 
 /**
  * 项目启动监听器
@@ -13,7 +12,7 @@ import javax.servlet.annotation.WebListener;
  * @since 2022/10/25
  */
 @Slf4j
-@WebListener
+//@WebListener
 public class ServletContextListenerUtil implements ServletContextListener {
 
     @Override

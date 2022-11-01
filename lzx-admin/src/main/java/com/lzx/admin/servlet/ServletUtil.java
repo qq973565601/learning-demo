@@ -1,7 +1,6 @@
 package com.lzx.admin.servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +10,7 @@ import java.io.IOException;
  * @author lzx
  * @since 2022/10/24
  */
-@WebServlet(urlPatterns = "/my")
+//@WebServlet(urlPatterns = "/my")
 public class ServletUtil extends HttpServlet {
 
     @Override

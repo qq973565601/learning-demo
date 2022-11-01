@@ -3,7 +3,6 @@ package com.lzx.admin.servlet;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
@@ -13,7 +12,7 @@ import java.io.IOException;
  * @since 2022/10/25
  */
 @Slf4j
-@WebFilter(urlPatterns = "/css/*")
+//@WebFilter(urlPatterns = "/css/*")
 public class FilterUtil implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

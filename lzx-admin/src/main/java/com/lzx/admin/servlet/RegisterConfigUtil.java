@@ -3,7 +3,6 @@ package com.lzx.admin.servlet;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
 
@@ -12,7 +11,7 @@ import java.util.Arrays;
  * @author lzx
  * @since 2022/10/25
  */
-@Configuration(proxyBeanMethods = true)
+//@Configuration(proxyBeanMethods = true)
 public class RegisterConfigUtil {
 
     @Bean
