@@ -10,7 +10,7 @@ spring:
 
 #配置数据源
   datasource:
-    url: jdbc:myslq:///
+    url: jdbc:mysql://localhost/learning_demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -19,3 +19,9 @@ spring:
   jdbc:
     template:
       query-timeout: 5
+
+mybatis:
+#指定全局配置文件
+  config-location: classpath:mybatis/mybatis-config.xml
+#指定sql映射文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
