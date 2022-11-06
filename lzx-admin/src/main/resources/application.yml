@@ -19,6 +19,16 @@ spring:
   jdbc:
     template:
       query-timeout: 5
+#redis配置
+#  redis:
+#    host:
+#    port:
+#    password:
+#    client-name:
+#    lettuce:
+#      pool:
+#        max-active:
+#        min-idle:
 
 mybatis:
 #指定全局配置文件
