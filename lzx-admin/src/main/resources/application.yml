@@ -20,15 +20,15 @@ spring:
     template:
       query-timeout: 5
 #redis配置
-#  redis:
-#    host:
-#    port:
-#    password:
-#    client-name:
-#    lettuce:
-#      pool:
-#        max-active:
-#        min-idle:
+  redis:
+    host:
+    port:
+    password:
+    client-name:
+    lettuce:
+      pool:
+        max-active:
+        min-idle:
 
 mybatis:
 #指定全局配置文件
@@ -38,3 +38,15 @@ mybatis:
 #  注解模式：指定全局配置文件的指定项
   configuration:
     map-underscore-to-camel-case: true
+
+#指标监控
+management:
+  endpoints:
+    enabled-by-default: true #默认开启所有监控端点
+    web:
+      exposure:
+        include: '*' #以web方式暴露所有端点
+
+  endpoint:
+    health:
+      show-components: ALWAYS
