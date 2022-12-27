@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main{
+    margin: 0 auto;
+    width: 96%;
+    padding: 2%;
+    border: 0;
+    text-align: center;
+}
+.main .diy-button-upload{
+    border: 1px solid #1E9FFF;
+    border-radius: 3px;
+    width: 90px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #fff;
+    background-color: #1E9FFF;
+}
+.main .diy-img-show{
+    margin-top: 20px;
+    color: red;
+    font-size: 18px;
+}
