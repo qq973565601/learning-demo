@@ -17,20 +17,20 @@ spring:
   servlet:
     multipart:
       # 支持最大文件大小
-      max-file-size: 100MB
+      max-file-size: 200MB
       # 支持最大请求大小
-      max-request-size: 100MB
+      max-request-size: 200MB
 # 自定义配置
 jar:
   # 上传文件服务器存储绝对路径（注意：路径一定要以/结尾，否则获取上传文件时会报404）
   # window server：F://app/object/upload/
   # linux server：/app/object/upload/
-  upload-path: F://03_java/app/demo/upload/
+  upload-path: E://chrome
   # 上传文件网络请求相对路径
   server-file-path: /upload
   # 上传图片大小（单位：MB）
   upload-image-size: 1.0
   # 上传视频大小（单位：MB）
-  upload-video-size: 50.0
+  upload-video-size: 200.0
   # 上传文件大小（单位：MB）
   upload-file-size: 10.0

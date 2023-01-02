@@ -90,6 +90,7 @@ public class UploadFileApi {
         // logger
         // log.info("上传请求时间："+FormatDateUtils.getDateStr(new Date(),"yyyy-MM-dd HH:mm:ss"));
         // 上传文件大小（默认为配置为图片）
+        long start = System.currentTimeMillis();
         Float uploadObjectSize=uploadImageSize;
         // 回传数据
         Map<String, Object> mapMsg = new HashMap<>();
@@ -152,7 +153,7 @@ public class UploadFileApi {
                     File dest = new File(realPath, fileName);
                     // 将接收到的文件传输到指定的目标文件
                     file.transferTo(dest);
-
+                    log.info("消耗时间:{}", System.currentTimeMillis() - start);
                     // 回传数据
                     // 0表示成功，1失败
                     mapMsg.put("code", 0);
