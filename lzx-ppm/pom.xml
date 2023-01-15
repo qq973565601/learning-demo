@@ -13,6 +13,11 @@
     <name>lzx-ppm</name>
     <description>ppm</description>
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+        </dependency>
         <!--springboot web启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
