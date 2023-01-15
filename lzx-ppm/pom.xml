@@ -12,9 +12,6 @@
     <version>1.0.0</version>
     <name>lzx-ppm</name>
     <description>ppm</description>
-    <properties>
-        <version.fastjson>1.2.35</version.fastjson>
-    </properties>
     <dependencies>
         <!--springboot web启动器-->
         <dependency>
@@ -25,17 +22,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
-        <!--lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

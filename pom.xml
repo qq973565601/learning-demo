@@ -19,7 +19,7 @@
     <modules>
         <module>lzx-algorithm</module>
         <module>lzx-common</module>
-        <module>lzx-module</module>
+        <module>lzx-foundation</module>
         <module>lzx-ssm</module>
         <module>lzx-springboot</module>
         <module>lzx-admin</module>
