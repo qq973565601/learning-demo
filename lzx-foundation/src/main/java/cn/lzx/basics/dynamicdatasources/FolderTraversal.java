@@ -3,7 +3,6 @@ package cn.lzx.basics.dynamicdatasources;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.stream.Stream;
 
 public class FolderTraversal {
 
@@ -11,12 +10,10 @@ public class FolderTraversal {
         // 1. 需求：打印文件夹内所有文件名称（含子级）
 //        Files.walk(Paths.get("src")).forEach(System.out::println);
 
-
         // 2. 注意事项 (1) try-with-resources (2) 遍历结果包含文件夹
 //        try(Stream<Path> pathStream = Files.walk(Paths.get("src"))) {
 //            pathStream.filter(Files::isRegularFile).forEach(System.out::println);
 //        }
-
 
         // 3. 需求：在文件夹的所有java文件中寻找单词gender
         Files.walkFileTree(Paths.get("src"), new FileVisitor<>() {
