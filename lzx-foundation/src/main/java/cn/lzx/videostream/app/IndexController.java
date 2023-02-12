@@ -7,7 +7,6 @@ import cn.lzx.videostream.dto.VideoDTO;
 import cn.lzx.videostream.service.VideoStreamService;
 import cn.lzx.videostream.util.ThreadPoolUtil;
 import cn.lzx.videostream.util.VideoDataCache;
-import jdk.nashorn.internal.ir.annotations.Reference;
 import lombok.extern.slf4j.Slf4j;
 import org.bytedeco.javacv.FrameGrabber;
 import org.bytedeco.javacv.FrameRecorder;
@@ -28,21 +27,15 @@ import java.util.concurrent.Future;
 @RequestMapping("/video")
 public class IndexController {
 
-    @Reference
-    private IRoadsideDeviceService iRoadsideDeviceService;
-    @Reference
-    private IDeviceInfoService iDeviceInfoService;
-
     /**
      * 获取设备信息，并执行拉流、推流任务，并返回rtmp地址
      * @return
      */
     @GetMapping("/rtmp")
-    public BaseRespEntity rtmp(@RequestParam String deviceIp, @RequestParam String factory) {
+    public String rtmp(@RequestParam String deviceIp, @RequestParam String factory) {
         /*if (StrUtil.isBlank(deviceno)) {
             return BaseRespEntity.error("设备序列号不能为空！");
         }
-
         DeviceInfoBO device = iDeviceInfoService.getOne(DeviceInfoBO.builder().deviceno(deviceno).build());
         if (ObjectUtil.isNull(device)) {
             return BaseRespEntity.error("设备信息异常！");
@@ -51,7 +44,7 @@ public class IndexController {
         // 如果设备已经存在拉流，直接返回rtmp
         VideoDTO video = VideoDataCache.VIDEO_MAP.get(deviceIp);
         if (ObjectUtil.isNotNull(video) && StrUtil.isNotBlank(video.getRtmp())) {
-            return BaseRespEntity.ok(video.getRtmp());
+            return video.getRtmp();
         }
         String rtsp;
         if (factory.equals("DH")) {
@@ -73,10 +66,6 @@ public class IndexController {
         Future<?> task = ThreadPoolUtil.POOL.submit(() -> {
             try {
                 videoStreamService.from().to().go(Thread.currentThread());
-            } catch (BaseException e) {
-                log.error("BaseException error {}", e.getMsg());
-                videoStreamService.close();
-                e.printStackTrace();
             } catch (FrameGrabber.Exception e) {
                 log.error("FrameGrabber error {}", e.getMessage());
                 videoStreamService.close();
@@ -94,7 +83,7 @@ public class IndexController {
         VideoDataCache.VIDEO_MAP.put(key, video);
         VideoDataCache.RTMP_MAP.put(key, videoStreamService);
         VideoDataCache.TASK_MAP.put(key, task);
-        return BaseRespEntity.ok(video.getRtmp());
+        return video.getRtmp();
     }
 }
 
