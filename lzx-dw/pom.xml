@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lzx</groupId>
+    <artifactId>lzx-dw</artifactId>
+    <version>1.0.0</version>
+    <name>lzx-dw</name>
+    <description>DIGIWin</description>
+    <properties>
+        <java.version>8</java.version>
+    </properties>
+    <dependencies>
+
+    </dependencies>
+
+    <!-- nexus私服配置 -->
+    <repositories>
+        <repository>
+            <id>nexus2</id>
+            <name>Nexus Repository</name>
+            <url>http://nexus.digiwincloud.com.cn:22699/content/repositories/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!--snapshots默认是关闭的,需要开启 -->
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

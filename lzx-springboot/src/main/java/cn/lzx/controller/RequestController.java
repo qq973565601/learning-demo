@@ -1,5 +1,6 @@
 package cn.lzx.controller;
 
+import cn.lzx.sqlserver.SqlTest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -33,9 +34,9 @@ public class RequestController {
      */
     @ResponseBody
     @GetMapping("/success")
-    public Map<String,Object> success(@RequestAttribute("msg") String msg,
-                       @RequestAttribute("code") Integer code,
-                       HttpServletRequest request) {
+    public Map<String, Object> success(@RequestAttribute("msg") String msg,
+                                       @RequestAttribute("code") Integer code,
+                                       HttpServletRequest request) {
         Object attributeMsg = request.getAttribute("msg");
         Object attributeCode = request.getAttribute("code");
         Map<String, Object> map = new HashMap<>();
@@ -44,5 +45,13 @@ public class RequestController {
         map.put("attributeMsg", attributeMsg);
         map.put("attributeCode", attributeCode);
         return map;
+    }
+
+    @ResponseBody
+    @GetMapping("/json")
+    public String getJson() {
+        SqlTest sqlTest = new SqlTest();
+        String json = sqlTest.getJson();
+        return "hello";
     }
 }

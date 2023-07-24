@@ -6,6 +6,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author lzx
+ *
+ * (exclude = DataSourceAutoConfiguration.class)
  */
 @SpringBootApplication
 public class LzxSpringbootApplication {
