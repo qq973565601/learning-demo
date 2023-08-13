@@ -1,4 +1,4 @@
-package cn.lzx.postgre.bean;
+package cn.lzx.database.postgre.bean;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package cn.lzx.lambda.data;
+package cn.lzx.aentity;
 
 import lombok.Data;
 
@@ -10,8 +10,12 @@ import lombok.Data;
 public class Book {
 
     private Long id;
+
     private String category;
+
     private String name;
+
     private Double score;
+
     private String introduction;
 }

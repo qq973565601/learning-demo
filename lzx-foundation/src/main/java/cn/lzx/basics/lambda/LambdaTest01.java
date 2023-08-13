@@ -1,4 +1,4 @@
-package cn.lzx.lambda;
+package cn.lzx.basics.lambda;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package cn.lzx.lambda.data;
+package cn.lzx.aentity;
 
 import lombok.Data;
 
@@ -13,8 +13,12 @@ import java.util.List;
 public class Author {
 
     private Long id;
+
     private String name;
+
     private String introduction;
+
     private Integer age;
+
     private List<Book> bookList;
 }

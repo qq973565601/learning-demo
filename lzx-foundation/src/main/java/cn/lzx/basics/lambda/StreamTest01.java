@@ -1,4 +1,4 @@
-package cn.lzx.lambda;
+package cn.lzx.basics.lambda;
 
 /**
  * @author lzx

@@ -36,7 +36,4 @@ public class CompletableFutureTest {
         System.out.println("main...end..." + integer);
     }
 
-    public static void main1(String[] args) {
-
-    }
 }

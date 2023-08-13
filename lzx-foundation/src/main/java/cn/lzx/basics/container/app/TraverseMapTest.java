@@ -1,7 +1,7 @@
 package cn.lzx.basics.container.app;
 
-import cn.lzx.basics.container.entity.Grade;
-import cn.lzx.basics.container.service.TraverseMap;
+import cn.lzx.aentity.Grade;
+import cn.lzx.basics.container.service.TraverseMapService;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Map;
  * @author lzx
  * @since 2023/1/16
  */
-public class TestTraverseMap {
+public class TraverseMapTest {
 
     private static Map<String, Grade> gradeMap;
 
@@ -33,25 +33,25 @@ public class TestTraverseMap {
 
     @Test
     public void testTraversByKeySet() {
-        TraverseMap traverseMap = new TraverseMap();
-        traverseMap.traverseByKeySet(gradeMap);
+        TraverseMapService traverseMapService = new TraverseMapService();
+        traverseMapService.traverseByKeySet(gradeMap);
     }
 
     @Test
     public void testTraverseByEntrySet() {
-        TraverseMap traverseMap = new TraverseMap();
-        traverseMap.traverseByEntrySet(gradeMap);
+        TraverseMapService traverseMapService = new TraverseMapService();
+        traverseMapService.traverseByEntrySet(gradeMap);
     }
 
     @Test
     public void testTraverseByIterator() {
-        TraverseMap traverseMap = new TraverseMap();
-        traverseMap.traverseByIterator(gradeMap);
+        TraverseMapService traverseMapService = new TraverseMapService();
+        traverseMapService.traverseByIterator(gradeMap);
     }
 
     @Test
     public void testTraverseByLambda() {
-        TraverseMap traverseMap = new TraverseMap();
-        traverseMap.traverseByLambda(gradeMap);
+        TraverseMapService traverseMapService = new TraverseMapService();
+        traverseMapService.traverseByLambda(gradeMap);
     }
 }

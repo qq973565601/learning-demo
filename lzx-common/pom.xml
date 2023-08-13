@@ -17,13 +17,32 @@
         <version.fastjson>1.2.35</version.fastjson>
         <version.httpclient>4.3.6</version.httpclient>
         <version.httpcore>4.2.1</version.httpcore>
+        <version.hutool>5.6.0</version.hutool>
+        <version.lombok>1.18.10</version.lombok>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
 
     <dependencies>
+        <!--utils-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
+            <version>${version.lombok}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${version.hutool}</version>
         </dependency>
         <!--logback日志框架-->
         <dependency>
@@ -57,16 +76,5 @@
             <artifactId>httpcore</artifactId>
             <version>${version.httpcore}</version>
         </dependency>
-<!--        &lt;!&ndash;使用java代码发送http请求的工具类&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.httpcomponents</groupId>-->
-<!--            <artifactId>httpcore</artifactId>-->
-<!--            <version>4.4.12</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>commons-lang</groupId>-->
-<!--            <artifactId>commons-lang</artifactId>-->
-<!--            <version>2.6</version>-->
-<!--        </dependency>-->
     </dependencies>
 </project>

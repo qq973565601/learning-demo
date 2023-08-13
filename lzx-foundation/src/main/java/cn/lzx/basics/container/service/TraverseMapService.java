@@ -1,6 +1,6 @@
 package cn.lzx.basics.container.service;
 
-import cn.lzx.basics.container.entity.Grade;
+import cn.lzx.aentity.Grade;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Set;
  * @author lzx
  * @since 2023/1/16
  */
-public class TraverseMap {
+public class TraverseMapService {
 
     /**
      * 根据keySet遍历

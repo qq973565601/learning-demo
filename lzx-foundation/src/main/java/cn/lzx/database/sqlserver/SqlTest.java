@@ -1,4 +1,4 @@
-package cn.lzx.utils;
+package cn.lzx.database.sqlserver;
 
 import com.alibaba.fastjson.JSON;
 
@@ -68,8 +68,5 @@ public class SqlTest {
         long jsonTime = System.currentTimeMillis();
         JSON.toJSONString(result);
         System.out.println("序列化时间为：" + (System.currentTimeMillis() - jsonTime));
-        //System.out.println(list1.toString());
-
-
     }
 }
