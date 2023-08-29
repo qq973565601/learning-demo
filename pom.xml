@@ -23,7 +23,6 @@
         <module>lzx-ssm</module>
         <module>lzx-springboot</module>
         <module>lzx-admin</module>
-        <module>lzx-ppm</module>
     </modules>
 
     <!--约束编码和版本-->
